@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeMy</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="site-header"></div>
+    <main class="page-content">
+        <h1>Selamat Datang di CodeMy</h1>
+        <p>CodeMy adalah platform pembelajaran online yang menyediakan berbagai materi tentang koding dan terminologi medis. Kami bertujuan membantu Anda meningkatkan keterampilan coding dan pemahaman istilah medis dengan cara yang menyenangkan dan interaktif.</p>
+        <p>Mulailah perjalanan belajar Anda dengan mendaftar sekarang dan jelajahi berbagai kursus yang kami tawarkan!</p>
+    </main>
+    <div id="site-footer"></div>
+    <script>
+        ["header", "footer"].forEach(function(name) {
+            fetch("layout/" + name + ".html")
+                .then(function(response) { return response.text(); })
+                .then(function(html) { document.getElementById("site-" + name).innerHTML = html; })
+                .catch(function() { console.error("Gagal memuat " + name + ".html"); });
+        });
+    </script>
+</body>
+</html>

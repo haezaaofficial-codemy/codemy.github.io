@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - CodeMy</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="site-header"></div>
+    <main class="page-content">
+        <h3>Dashboard</h3>
+        <p>Ini adalah halaman statis untuk ditampilkan di GitHub Pages. Untuk pengalaman login yang sebenarnya, halaman ini harus menggunakan server PHP dan sistem sesi.</p>
+        <p>Silakan kembali ke <a href="login.html">Login</a> untuk melihat halaman login.</p>
+    </main>
+    <div id="site-footer"></div>
+    <script>
+        ["header", "footer"].forEach(function(name) {
+            fetch("layout/" + name + ".html")
+                .then(function(response) { return response.text(); })
+                .then(function(html) { document.getElementById("site-" + name).innerHTML = html; })
+                .catch(function() { console.error("Gagal memuat " + name + ".html"); });
+        });
+    </script>
+</body>
+</html>

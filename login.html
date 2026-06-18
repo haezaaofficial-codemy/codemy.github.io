@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - CodeMy</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="site-header"></div>
+    <main class="page-content">
+        <h3>LOGIN AKUN</h3>
+        <p>Form ini tampil sebagai halaman statis. Untuk fungsionalitas login, diperlukan server PHP dan database.</p>
+        <form action="#" method="post">
+            <input type="text" placeholder="username" name="username" />
+            <input type="password" placeholder="password" name="password" />
+            <button type="submit" name="login">Masuk</button>
+        </form>
+    </main>
+    <div id="site-footer"></div>
+    <script>
+        ["header", "footer"].forEach(function(name) {
+            fetch("layout/" + name + ".html")
+                .then(function(response) { return response.text(); })
+                .then(function(html) { document.getElementById("site-" + name).innerHTML = html; })
+                .catch(function() { console.error("Gagal memuat " + name + ".html"); });
+        });
+    </script>
+</body>
+</html>
